@@ -1,4 +1,4 @@
-package br.com.entra21.orientacao.objetos.principal.classes;
+package br.com.entra21.orientacao.objetos.principal.aula01;
 
 public class Professor {
 	//atributos static são de dominio da CLASSE e não de cada objeto

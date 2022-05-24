@@ -1,4 +1,4 @@
-package br.com.entra21.orientacao.objetos.principal.classes;
+package br.com.entra21.orientacao.objetos.principal.aula01;
 
 import java.util.Scanner;
 
@@ -13,6 +13,10 @@ public class Aluno {
 	public Aluno() { //construtor vazio que ao utilizar o (new Aluno) ele é executado
 		
 	}
+	public Aluno(String nomeLaDeFora) {
+		this.nome = nomeLaDeFora; //objeto já inicializado
+				
+	}
 	
 	public byte responderChamada() {
 		Scanner entrada= new Scanner(System.in);
@@ -20,7 +24,7 @@ public class Aluno {
 		String resposta = entrada.next();
 		if(resposta.equalsIgnoreCase("sim")) {
 			this.quantidadePresencas++;
-			// o this serve para reafirmar que esttamos mencionando
+			// o this serve para reafirmar que estamos mencionando
 			// um atributo do meu objeto
 		}
 		return this.quantidadePresencas;
