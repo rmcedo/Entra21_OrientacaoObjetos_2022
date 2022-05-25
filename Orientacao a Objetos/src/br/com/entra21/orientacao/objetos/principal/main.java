@@ -4,6 +4,7 @@ import java.util.Scanner;
 import br.com.entra21.orientacao.objetos.principal.aula01.Aluno;
 import br.com.entra21.orientacao.objetos.principal.aula01.Professor;
 import br.com.entra21.orientacao.objetos.principal.aula02.heranca.Diretor;
+import br.com.entra21.orientacao.objetos.principal.aula02.heranca.Funcionario;
 
 public class main {
 	// o objeto da classe Scanner esta na variavel de entrada, então é um objeto
@@ -45,38 +46,45 @@ public class main {
 
 	public static void aprenderClassesObjetos() {
 
+		Funcionario funcionario1 = new Funcionario();
+		funcionario1.setIdade((byte) 27);
+		funcionario1.setNome("Rafael");
+		funcionario1.setCargoAtual("Estagiário Dev. Java");
+		funcionario1.setSalario(1800.0f);
+
+		System.out.println("Oi, tenho " + funcionario1.getIdade() + " anos, meu nome é " + funcionario1.getNome()
+				+ ", sou um " + funcionario1.getCargoAtual() + " e meu salario é " + funcionario1.getSalario());
 		
-		
-		////PARA TESTAR OS PROGRAMAS, BASTA TIRAR OS COMENTÁRIOS ==== CTRL+SHIFT+\
-		/*
-		 * Diretor diretor1 = new Diretor(); diretor1.realizarApresentacao(); Diretor
-		 * diretor2 = new Diretor(); Diretor diretor3 = new Diretor("Paulo", (byte) 80);
-		 * diretor3.realizarApresentacao();
-		 */
+
+		//// PARA TESTAR AS OUTRAS LINHAS DO CÓDIGO, BASTA TIRAR OS COMENTÁRIOS ====
+		//// CTRL+SHIFT+\
+
+		Diretor diretor1 = new Diretor();
+
+		Professor professorJava = new Professor();
+		Professor professoraIngles = new Professor("Isabelle", (byte) 30);
+
+		System.out.println("O nome dela = " + professoraIngles.getNome());
+		professoraIngles.setNome("Isabelle 2");
+		System.out.println("Agora o nome dela = " + professoraIngles.getNome());
+		System.out.println("A idade dela é " + professoraIngles.getIdade());
+
+		System.out.println("Os professores trabalham na " + Professor.instituicao);
+
+		Aluno alunoTeste = new Aluno();
+
+		alunoTeste.nome = "Rafael";
+		alunoTeste.idade = 27;
+
+		Aluno outroAluno = new Aluno();
+
+		outroAluno.idade = 18;
+		outroAluno.nome = "Visitante";
+
+		alunoTeste.responderChamada();
+		alunoTeste.responderChamada();
 
 		/*
-		 * Professor professorJava = new Professor(); Professor professoraIngles = new
-		 * Professor("Isabelle", (byte) 30);
-		 * 
-		 * System.out.println("O nome dela = " + professoraIngles.getNome());
-		 * professoraIngles.setNome("Isabelle 2");
-		 * System.out.println("Agora o nome dela = " + professoraIngles.getNome());
-		 * System.out.println("A idade dela é " + professoraIngles.getIdade());
-		 * 
-		 * System.out.println("Os professores trabalham na " + Professor.instituicao);
-		 * 
-		 * Aluno alunoTeste = new Aluno();
-		 * 
-		 * alunoTeste.nome = "Rafael"; alunoTeste.idade = 27;
-		 * 
-		 * Aluno outroAluno = new Aluno();
-		 * 
-		 * outroAluno.idade = 18; outroAluno.nome = "Visitante";
-		 * 
-		 * alunoTeste.responderChamada(); alunoTeste.responderChamada();
-		 * 
-		 * 
-		 * 
 		 * System.out.println("Qual o nome do aluno novato? ");
 		 * alunoNovato.nome=entrada.next();
 		 * 
