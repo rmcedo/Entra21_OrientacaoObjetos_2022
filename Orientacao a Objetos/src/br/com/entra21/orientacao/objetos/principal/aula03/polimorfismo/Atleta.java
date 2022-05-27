@@ -1,4 +1,4 @@
-package br.com.entra21.orientacao.objetos.principal.aula3.polimorfismo;
+package br.com.entra21.orientacao.objetos.principal.aula03.polimorfismo;
 
 public class Atleta {
 

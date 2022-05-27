@@ -5,11 +5,21 @@ import br.com.entra21.orientacao.objetos.principal.aula01.Aluno;
 import br.com.entra21.orientacao.objetos.principal.aula01.Professor;
 import br.com.entra21.orientacao.objetos.principal.aula02.heranca.Diretor;
 import br.com.entra21.orientacao.objetos.principal.aula02.heranca.Funcionario;
-import br.com.entra21.orientacao.objetos.principal.aula3.polimorfismo.Atleta;
-import br.com.entra21.orientacao.objetos.principal.aula3.polimorfismo.Nadador;
-import br.com.entra21.orientacao.objetos.principal.aula3.polimorfismo.Velocista;
+import br.com.entra21.orientacao.objetos.principal.aula02.heranca.Pessoa;
+import br.com.entra21.orientacao.objetos.principal.aula03.polimorfismo.Atleta;
+import br.com.entra21.orientacao.objetos.principal.aula03.polimorfismo.Nadador;
+import br.com.entra21.orientacao.objetos.principal.aula03.polimorfismo.Velocista;
+import br.com.entra21.orientacao.objetos.principal.aula04.conceitos.poo.Ponto;
+import br.com.entra21.orientacao.objetos.principal.aula04.conceitos.poo.Reta;
+import br.com.entra21.orientacao.objetos.principal.aula04.interfaces.Aviao;
+import br.com.entra21.orientacao.objetos.principal.aula04.interfaces.Capivara;
+import br.com.entra21.orientacao.objetos.principal.aula04.interfaces.Gato;
+import br.com.entra21.orientacao.objetos.principal.aula04.interfaces.Humano;
+import br.com.entra21.orientacao.objetos.principal.aula04.interfaces.Objeto;
+import br.com.entra21.orientacao.objetos.principal.aula04.interfaces.Planta;
+import br.com.entra21.orientacao.objetos.principal.aula04.interfaces.Supers;
 
-public class main {
+public class Main {
 	// o objeto da classe Scanner esta na variavel de entrada, então é um objeto
 	// porem o System.in é uma chamada static pq para acessar o in do System
 	static Scanner input = new Scanner(System.in);
@@ -24,6 +34,8 @@ public class main {
 			System.out.println("\t1 - Aprender Classes\n");
 			System.out.println("\t2 - Aprender Herança\n");
 			System.out.println("\t3 - Aprender Polimorfismo\n");
+			System.out.println("\t4 - Aprender Conceitos POO\n");
+			System.out.println("\t5 - Aprender Polimorfismo com Interface\n");
 			option = input.nextByte();
 
 			switch (option) {
@@ -39,6 +51,12 @@ public class main {
 				break;
 			case 3:
 				aprenderPolimorfismo();
+				break;
+			case 4:
+				aprenderConceitosPoo();
+				break;
+			case 5:
+				aprenderPolimorfismoInterface();
 				break;
 
 			default:
@@ -139,6 +157,73 @@ public class main {
 		System.out.println("--------------");
 		flash.comemorarVitoria();
 		System.out.println("--------------");
+
+	}
+
+	private static void aprenderConceitosPoo() {
+
+		///// COESÃO ////
+		// A classe Ponto tem alta COESÃO pois ele é preciso nas suas responsabilidades
+
+		Ponto pontoAlto = new Ponto(30, 10000);
+		Ponto pontoEsqBaixo = new Ponto(-20, -100);
+
+		///// AGREGAÇÃO & ASSOCIAÇÃO ////
+		// A classe reta é agregada por pontos que podem não estar inicializados
+		// A associação de reta e ponto é de um para muitos respectivamente
+
+		Reta retaTorta = new Reta();
+		Reta retaDiagonal = new Reta(pontoAlto, pontoEsqBaixo);
+
+	}
+
+	private static void aprenderPolimorfismoInterface() {
+		
+		Humano rafael = new Humano();
+		rafael.setNome("Rafael");
+		
+		rafael.apresentarSe();
+		
+		rafael.alimentar("pizza");
+		
+		rafael.locomover();
+		rafael.comunicar("HEY\n");
+		
+		Gato vezu = new Gato("vezu", new Pessoa("Rubem", (byte)33, ""));
+		
+		vezu.alimentar("racao");
+		vezu.comunicar("quero racao");
+		vezu.locomover();
+		
+		Capivara cleidson = new Capivara();
+		cleidson.alimentar("Milho");
+		cleidson.locomover();
+		cleidson.comunicar("");
+		
+		Planta maracuja = new Planta("Passiflora edulis Sims");
+		
+		maracuja.alimentar("lasanha");
+		maracuja.comunicar("");
+		maracuja.locomover();
+		
+		Objeto assistenteVirtual = new Objeto("Echo Dot");
+		
+		assistenteVirtual.alimentar("");
+		assistenteVirtual.locomover();
+		assistenteVirtual.comunicar("Alexa, fala cmg");
+		
+		Supers heroi = new Supers("codar", "Super Coder");
+		
+		heroi.alimentar("café");
+		heroi.locomover();
+		heroi.comunicar("");
+		
+		Aviao comercial = new Aviao();
+		comercial.setModelo("Boeing 737");
+		System.out.println(comercial.freiar());
+		
+		
+		
 
 	}
 
